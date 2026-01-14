@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>양양군 농촌활성화지원센터</title>
+
+  <!-- SNS / 카카오톡 공유 대표 이미지 설정 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="양양군 농촌활성화지원센터" />
+  <meta property="og:description" content="양양군 농촌활성화지원센터 공식 홈페이지입니다." />
+  <meta property="og:url" content="https://okrangone98-oss.github.io/yy-rural-center/" />
+  <meta property="og:image" content="https://okrangone98-oss.github.io/yy-rural-center/images/PD사진/logo-main.png" />
+
+  <!-- 트위터/X 공유용 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="양양군 농촌활성화지원센터" />
+  <meta name="twitter:description" content="양양군 농촌활성화지원센터 공식 홈페이지입니다." />
+  <meta name="twitter:image" content="https://okrangone98-oss.github.io/yy-rural-center/images/PD사진/logo-main.png" />
+
+  <!-- 파비콘(옵션) -->
+  <link rel="icon" href="https://okrangone98-oss.github.io/yy-rural-center/images/PD사진/logo-main.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 웹폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:"Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;
+      color:#222;
+      background-color:#f5f5f5;
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* 헤더 */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#ffffffcc;
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #e5e5e5;
+    }
+    .container{
+      width:100%;
+      max-width:1080px;
+      margin:0 auto;
+      padding:0 16px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo{font-weight:700;font-size:1.1rem;}
+    .logo span{color:#5b8a72;}
+    .nav-links{
+      display:flex;
+      gap:16px;
+      font-size:0.95rem;
+    }
+    .nav-links a{
+      padding:4px 8px;
+      border-radius:999px;
+    }
+    .nav-links a:hover{
+      background:#5b8a72;
+      color:#fff;
+    }
+
+    /* ====== 네이버 톤 버튼 공통 스타일 ====== */
+    .btn-unified{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:240px;
+      height:46px;
+      padding:0 18px;
+      border-radius:999px;
+      background:#5b8a72;
+      color:#fff;
+      font-size:.95rem;
+      font-weight:600;
+      border:none;
+      text-decoration:none;
+      box-shadow:0 2px 6px rgba(0,0,0,.16);
+      cursor:pointer;
+      transition: background .16s ease, transform .16s ease, box-shadow .16s ease;
+    }
+    .btn-unified:hover{
+      background:#4a735f;
+      transform:translateY(-1px);
+      box-shadow:0 4px 10px rgba(0,0,0,.20);
+    }
+    .btn-unified:active{
+      transform:translateY(0);
+      box-shadow:0 2px 5px rgba(0,0,0,.18);
+    }
+    .btn-unified-icon{font-size:1.15rem; line-height:1;}
+
+    /* 히어로 */
+    .hero{
+      min-height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#000 url("images/logo-main.png") center/contain no-repeat;
+      color:#fff;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(0,0,0,.55),rgba(0,0,0,.25));
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      padding:80px 16px;
+    }
+    .hero-title{
+      font-size:2.2rem;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+    .hero-subtitle{
+      font-size:1rem;
+      max-width:520px;
+      margin-bottom:20px;
+      opacity:.95;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:24px;
+    }
+    .badge{
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.7);
+      font-size:.8rem;
+      opacity:.85;
+    }
+
+    /* 공통 섹션 */
+    section{padding:64px 0;}
+    section:nth-of-type(even){background:#fff;}
+    section:nth-of-type(odd){background:#f5f5f5;}
+    .section-header{margin-bottom:32px;}
+    .section-title{
+      font-size:1.6rem;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .section-subtitle{
+      font-size:.95rem;
+      color:#555;
+      max-width:720px;
+      word-break:keep-all;
+      white-space:normal;
+    }
+
+    /* 소개 */
+    .about-grid{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      gap:32px;
+      align-items:start;
+    }
+    .about-card{
+      background:#fff;
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+      border:1px solid #eaeaea;
+    }
+    .about-card h3{margin-bottom:8px;font-size:1.05rem;}
+    .about-list{list-style:none;font-size:.9rem;}
+    .about-list li{margin-bottom:6px;}
+
+    /* ====== 주요 사업 가로 스크롤 카드 ====== */
+    .section-sub{
+      font-size:0.95rem;
+      color:#555;
+      margin-bottom:18px;
+    }
+    .program-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .program-tab-btn{
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid #d0e4dd;
+      background:#f5faf8;
+      font-size:0.85rem;
+      color:#5b8a72;
+      cursor:pointer;
+    }
+    .program-tab-btn.is-active{
+      background:#5b8a72;
+      color:#fff;
+      border-color:#5b8a72;
+    }
+    .program-scroll{
+      overflow-x:auto;
+      padding-bottom:4px;
+    }
+    .program-scroll::-webkit-scrollbar{height:6px;}
+    .program-scroll::-webkit-scrollbar-thumb{background:#d1d1d1;border-radius:999px;}
+    .program-scroll::-webkit-scrollbar-track{background:transparent;}
+    .program-list{
+      display:flex;
+      gap:16px;
+      padding:2px 2px 10px;
+    }
+    .program-card{
+      flex:0 0 auto;
+      min-width:260px;
+      max-width:280px;
+      background:#fff;
+      border-radius:16px;
+      padding:14px 16px 16px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.04);
+      border:1px solid #e5f0ea;
+    }
+    .program-tag{
+      display:inline-flex;
+      padding:3px 9px;
+      border-radius:999px;
+      font-size:0.78rem;
+      background:#e6f5ef;
+      color:#5b8a72;
+      margin-bottom:6px;
+    }
+    .program-title{
+      font-size:1rem;
+      font-weight:700;
+      margin-bottom:6px;
+      color:#222;
+    }
+    .program-desc{
+      font-size:0.88rem;
+      color:#555;
+      margin-bottom:6px;
+    }
+    .program-meta{
+      font-size:0.8rem;
+      color:#777;
+    }
+
+    /* 강사 - 가로 스크롤 */
+    .teacher-filter{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:12px;
+    }
+    .filter-btn{
+      font-size:.8rem;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid #ddd;
+      background:#fff;
+      cursor:pointer;
+    }
+    .filter-btn.active{
+      background:#5b8a72;
+      color:#fff;
+      border-color:#5b8a72;
+    }
+
+    .teacher-grid{
+      display:flex;
+      flex-wrap:nowrap;
+      gap:20px;
+      overflow-x:auto;
+      padding-bottom:12px;
+      scroll-snap-type:x mandatory;
+    }
+    .teacher-grid::-webkit-scrollbar{height:6px;}
+    .teacher-grid::-webkit-scrollbar-thumb{background:#ccc;border-radius:999px;}
+    .teacher-grid::-webkit-scrollbar-track{background:transparent;}
+
+    .teacher-card{
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+      text-align:center;
+      border:1px solid #e5e5e5;
+      flex:0 0 260px;
+      min-width:220px;
+      scroll-snap-align:start;
+    }
+    .teacher-photo{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:10px;
+      border:2px solid #5b8a7233;
+    }
+    .teacher-name{font-weight:600;margin-bottom:4px;}
+    .teacher-role{
+      font-size:.8rem;
+      color:#5b8a72;
+      margin-bottom:4px;
+      font-weight:600;
+    }
+    .teacher-field{font-size:.85rem;color:#333;margin-bottom:6px;}
+    .teacher-org{font-size:.8rem;color:#666;margin-bottom:4px;}
+    .teacher-note{font-size:.8rem;color:#777;}
+    .teacher-email{font-size:.8rem;color:#555;margin-top:4px;}
+    .teacher-email a{color:#5b8a72;}
+
+    /* 갤러리 */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
+    }
+    .gallery-item{
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid #e5e5e5;
+      background:#000;
+    }
+    .gallery-item img{
+      display:block;
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      transition:transform .25s ease;
+    }
+    .gallery-item:hover img{transform:scale(1.05);}
+
+    /* 연락처 / 오시는 길 */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      gap:24px;
+      align-items:stretch;
+      margin-bottom:24px;
+    }
+    .contact-card{
+      background:#fff;
+      border-radius:16px;
+      padding:18px 20px;
+      border:1px solid #e5e5e5;
+      font-size:.9rem;
+      height:100%;
+    }
+    .contact-card h3{margin-bottom:8px;}
+    .contact-row{margin-bottom:6px;}
+    .contact-label{display:inline-block;width:70px;font-weight:600;}
+
+    .map-box{
+      background:#f0faf5;
+      border-radius:16px;
+      padding:18px 20px;
+      border:1px solid #d4ebe0;
+      font-size:.9rem;
+      height:100%;
+    }
+    .map-box-title{font-weight:600;margin-bottom:6px;}
+    .map-box-desc{font-size:.9rem;color:#555;margin-bottom:12px;}
+
+    /* 아래 두 박스(센터 채널 / 강사카드)용 그리드 */
+    .extra-grid{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      gap:24px;
+      margin-top:24px;
+    }
+    .full-card{
+      background:#fff;
+      border-radius:16px;
+      border:1px solid #e5e5e5;
+      padding:18px 20px;
+      box-shadow:0 6px 18px rgba(0,0,0,.03);
+      font-size:.9rem;
+    }
+    .channel-link-wrap{
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:12px;
+    }
+    .channel-link-text{color:#555;}
+
+    .teacher-form-title{
+      font-size:1.05rem;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .teacher-form-desc{
+      font-size:.85rem;
+      color:#555;
+      margin-bottom:6px;
+      line-height:1.6;
+    }
+
+    /* 공지사항 프리뷰 */
+    .notice-wrapper{
+      background:#fff;
+      border-radius:16px;
+      border:1px solid #e5e5e5;
+      padding:20px 22px;
+      box-shadow:0 6px 18px rgba(0,0,0,.03);
+    }
+    .notice-preview-body{
+      max-height:230px;
+      overflow-y:auto;
+      padding-right:4px;
+    }
+    .notice-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:.9rem;
+      table-layout:fixed;
+    }
+    .notice-table thead{background:#f5f7f6;}
+    .notice-table th,
+    .notice-table td{
+      padding:10px 10px;
+      border-bottom:1px solid #ececec;
+      text-align:left;
+    }
+    .notice-table th:nth-child(2),
+    .notice-table td:nth-child(2){
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .notice-table th:nth-child(3),
+    .notice-table td:nth-child(3){
+      text-align:right;
+    }
+    .notice-type{
+      font-size:.8rem;
+      color:#5b8a72;
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .notice-title a{color:#222;}
+    .notice-title a:hover{text-decoration:underline;}
+    .notice-date{
+      font-size:.8rem;
+      color:#777;
+      white-space:nowrap;
+    }
+    .notice-empty{
+      text-align:center;
+      color:#888;
+      padding:18px 0;
+      font-size:.85rem;
+    }
+    .notice-preview-footer{
+      margin-top:14px;
+      text-align:right;
+    }
+    .notice-more-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 16px;
+      border-radius:999px;
+      background:#5b8a72;
+      color:#fff;
+      font-size:.85rem;
+      font-weight:600;
+    }
+    .notice-more-btn:hover{background:#4a735f;}
+
+    /* 푸터 */
+    footer{
+      padding:16px 0 24px;
+      background:#111;
+      color:#aaa;
+      font-size:.8rem;
+    }
+    footer .container{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    footer a{color:#e0f2e9;}
+
+    /* 반응형 */
+    @media (max-width:768px){
+      .nav-links{display:none;}
+      .hero{min-height:65vh;}
+      .hero-title{font-size:1.8rem;}
+      .about-grid,
+      .contact-grid,
+      .extra-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      양양군 <span>농촌활성화지원센터</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">센터소개</a>
+      <a href="#programs">주요사업</a>
+      <a href="#teachers">강사진</a>
+      <a href="notice.html">공지사항</a>
+      <a href="#gallery">활동사진</a>
+      <a href="#contact">오시는길</a>
+      <a href="qna.html">Q&A</a>
+      <a href="admin.html">관리자</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-badges">
+      <span class="badge">공동체 활성화</span>
+      <span class="badge">완료지구 활성화</span>
+      <span class="badge">주민 역량강화</span>
+    </div>
+    <h1 class="hero-title">양양 농촌의 내일을 함께 디자인합니다.</h1>
+    <p class="hero-subtitle">
+      양양군 농촌활성화지원센터는 농림축산식품부와 양양군(농업기술센터)이 추진하는 농촌협약 시군역량강화사업의 전담기관입니다.<br><br>
+      주민과 함께 배우고, 기획하고, 실행하며<br>
+      동아리·두레, 활동가 양성, 문화·복지·교육 프로그램 등을 운영합니다.
+    </p>
+    <div class="hero-buttons" style="display:flex; flex-wrap:wrap; gap:12px;">
+      <a href="#programs" class="btn-unified">
+        <span class="btn-unified-icon">📌</span><span>2025 주요 사업 보기</span>
+      </a>
+      <a href="#contact" class="btn-unified" style="background:transparent;border:1px solid #ffffffaa;">
+        <span class="btn-unified-icon">💬</span><span>문의 및 상담</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 센터 소개 -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">센터 소개</h2>
+      <p class="section-subtitle">
+        양양군 농촌지역의 주민이 스스로 기획하고 실행하는 구조를 만들기 위해
+        교육·컨설팅·네트워크를 지원합니다.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>미션 & 비전</h3>
+        <ul class="about-list">
+          <li>· 주민의 역량을 기반으로 한 자립형 공동체 구축</li>
+          <li>· 지역 자원을 활용한 공동체 활성화</li>
+          <li>· 주민이 주도하는 지속가능한 농촌</li>
+          <li>· 생활과 문화, 돌봄이 함께 있는 농촌 만들기</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>핵심 역할</h3>
+        <ul class="about-list">
+          <li>· 시군역량강화사업 총괄 기획 및 운영</li>
+          <li>· 의기양양 두레&동아리 발굴·지원</li>
+          <li>· 활동가 양성 아카데미 기획·운영</li>
+          <li>· 컨설팅, 교육, 네트워크 구축 지원</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 주요 사업 -->
+<section id="programs">
+  <div class="container">
+    <h2 class="section-title">주요 사업</h2>
+    <p class="section-sub">
+      양양군 농촌활성화지원센터의 핵심 사업을 한눈에 볼 수 있습니다.
+      카테고리를 선택하고 왼쪽·오른쪽으로 스크롤하며 살펴보세요.
+    </p>
+
+    <!-- 연도 탭 (2026 / 2025 아카이브) -->
+    <div class="program-tabs" id="program-year-tabs" style="margin-top:10px;"></div>
+    <p id="program-year-subtitle" class="section-sub" style="margin-top:10px;"></p>
+
+
+    <div class="program-tabs" id="program-tabs"></div>
+
+    <div class="program-scroll">
+      <div class="program-list" id="program-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 강사진 -->
+<section id="teachers" style="padding: 60px 0;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 40px; text-align: center;">
+      <h2 class="section-title" style="font-size: 2rem; font-weight: bold; margin-bottom: 15px;">강사진 & PD</h2>
+      <p class="section-subtitle" style="color: #666; line-height: 1.6; margin:0 auto;">
+        양양군 농촌활성화지원센터의 교육 프로그램과 현장 프로젝트를 함께 이끌어 가는<br>
+        강사·컨설턴트, PD(프로그램 운영 주민활동가)님들을 소개합니다.
+      </p>
+    </div>
+
+    <div class="teachers-info">
+      <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: #333;">
+        센터 강사진
+      </h3>
+
+      <div class="info-text" style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+        <p style="margin-bottom: 10px;">
+          아래 강사진은 「25_강사카드」 자료를 바탕으로 정리한 목록입니다.<br>
+          상단 카테고리를 눌러 분야별로 필터링해서 보실 수 있습니다.
+        </p>
+
+        <p>
+          ※ 이메일 주소 및 인스타그램 계정은 기본적으로 공개되지 않습니다.<br>
+          - 추후 본인이 공개를 희망하는 경우에 한해 별도 동의를 받아 공개될 수 있습니다.<br>
+          - 강사와 연락을 원하실 경우 농촌활성화지원센터에 문의 바랍니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ 필터/리스트가 container 밖으로 나가던 문제 해결: 여기 안에 배치 -->
+    <div class="teacher-filter">
+      <button class="filter-btn active" data-filter="전체">전체</button>
+      <button class="filter-btn" data-filter="농촌·공동체·정책">농촌·공동체·정책</button>
+      <button class="filter-btn" data-filter="환경·생태">환경·생태</button>
+      <button class="filter-btn" data-filter="사진·아카이브·영상">사진·아카이브·영상</button>
+      <button class="filter-btn" data-filter="요리·식문화">요리·식문화</button>
+      <button class="filter-btn" data-filter="디지털·AI·문해">디지털·AI·문해</button>
+      <button class="filter-btn" data-filter="정리·실버·복지·치유">정리·실버·복지·치유</button>
+      <button class="filter-btn" data-filter="미술·공예·예술">미술·공예·예술</button>
+      <button class="filter-btn" data-filter="세무·회계">세무·회계</button>
+      <button class="filter-btn" data-filter="레크레이션·진행">레크레이션·진행</button>
+      <button class="filter-btn" data-filter="기타">기타</button>
+    </div>
+
+    <div class="teacher-grid" id="teacher-list"></div>
+
+    
+    <h3 style="font-size:1.05rem;margin:40px 0 12px;">PD & 현장 코디네이터</h3>
+    <p id="pd-year-subtitle" style="font-size:.85rem;color:#666;margin-bottom:12px;">
+      각 프로젝트를 이끄는 중간관리자이자 활동가로서, 주민과 현장을 연결하는 역할을 수행합니다.
+    </p>
+
+    <!-- 연도 탭 -->
+    <div class="teacher-filter" id="pd-year-tabs" style="margin-bottom:10px;"></div>
+
+    <!-- 담당사업(프로젝트) 필터 -->
+    <div class="teacher-filter" id="pd-project-tabs" style="margin-bottom:12px;"></div>
+
+    <!-- PD 카드 리스트 -->
+    <div class="teacher-grid" id="pd-list"></div>
+  </div>
+</section>
+
+<!-- 공지사항 미리보기 -->
+<section id="notice-preview">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">공지사항</h2>
+      <p class="section-subtitle">
+        양양군 농촌활성화지원센터의 주요 안내와 새 소식을 확인하실 수 있습니다.
+      </p>
+    </div>
+
+    <div class="notice-wrapper">
+      <div class="notice-preview-body">
+        <table class="notice-table">
+          <thead>
+            <tr>
+              <th style="width:80px;">구분</th>
+              <th>제목</th>
+              <th style="width:120px;">날짜</th>
+            </tr>
+          </thead>
+          <tbody id="notice-preview-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="notice-preview-footer">
+        <a href="notice.html" class="notice-more-btn">전체 공지사항 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 활동사진 -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">활동 사진</h2>
+      <p class="section-subtitle">
+        현장 프로그램, 교육, 행사의 모습을 일부 담았습니다.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/PD사진/24성과공유회 (2).JPG" alt="성과공유회 사진" /></div>
+      <div class="gallery-item"><img src="images/PD사진/24성과공유회.jpg" alt="성과공유회 사진 2" /></div>
+      <div class="gallery-item"><img src="images/PD사진/2025 양양군 의기양양 두레동아리 워크숍-28.jpg" alt="두레동아리 워크숍" /></div>
+      <div class="gallery-item"><img src="images/PD사진/두레동아리 (2).jpg" alt="두레동아리 활동 1" /></div>
+      <div class="gallery-item"><img src="images/PD사진/두레동아리 (3).jpg" alt="두레동아리 활동 2" /></div>
+      <div class="gallery-item"><img src="images/PD사진/두레동아리 (4).jpg" alt="두레동아리 활동 3" /></div>
+      <div class="gallery-item"><img src="images/PD사진/두레동아리.jpg" alt="두레동아리 활동 4" /></div>
+      <div class="gallery-item"><img src="images/PD사진/문화배달 (1).jpg" alt="문화배달 활동 1" /></div>
+      <div class="gallery-item"><img src="images/PD사진/문화배달 (2).jpg" alt="문화배달 활동 2" /></div>
+      <div class="gallery-item"><img src="images/PD사진/문화배달 (3).jpg" alt="문화배달 활동 3" /></div>
+      <div class="gallery-item"><img src="images/PD사진/문화배달 (4).jpg" alt="문화배달 활동 4" /></div>
+      <div class="gallery-item"><img src="images/PD사진/문화배달 (5).jpg" alt="문화배달 활동 5" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- 문의 & 오시는 길 -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">문의 & 오시는 길</h2>
+      <p class="section-subtitle">
+        주민 사업 제안, 교육 의뢰 등 궁금하신 점은 언제든지 연락 주세요.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>연락처 정보</h3>
+        <div class="contact-row"><span class="contact-label">전화</span><span>033-673-0221</span></div>
+        <div class="contact-row"><span class="contact-label">이메일</span><span>yyfarmct@naver.com</span></div>
+        <div class="contact-row"><span class="contact-label">주소</span><span>강원특별자치도 양양군 동해대로 2558, 행복나눔터2층 (농촌활성화지원센터)</span></div>
+        <div class="contact-row"><span class="contact-label">운영시간</span><span>월–금 09:00–18:00 (공휴일 휴무)</span></div>
+      </div>
+
+      <div class="map-box">
+        <div class="map-box-title">찾아오는 길</div>
+        <p class="map-box-desc">
+          버튼을 클릭하시면 네이버 지도가 새 창(또는 탭)으로 열려 길찾기,
+          주변 정류장 등을 자세히 확인하실 수 있습니다.
+        </p>
+
+        <button
+          type="button"
+          class="btn-unified"
+          onclick="window.open('https://naver.me/5mhpqk0D', '_blank')"
+        >
+          <span class="btn-unified-icon">📍</span>
+          <span>찾아오는 길</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 센터 채널 & 강사카드 -->
+    <div class="extra-grid">
+      <!-- ✅ 센터 채널 -->
+      <div class="full-card channel-link-wrap">
+        <p class="channel-link-text">
+          센터의 다양한 채널, 자료, 서식 다운로드는 아래 링크를 통해 확인하실 수 있습니다.<br>
+          (블로그, 카페에서 자료 받기 가능)
+        </p>
+
+        <!-- 아래 href만 실제 링크로 바꿔주세요 -->
+        <a
+          href="#"
+          class="btn-unified"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="btn-unified-icon">📌</span>
+          <span>센터 채널 & 소식 모아보기</span>
+        </a>
+      </div>
+
+      <!-- ✅ 강사카드 입력 폼 -->
+      <div class="full-card">
+        <h3 class="teacher-form-title">강사카드 입력 폼</h3>
+        <p class="teacher-form-desc">
+          처음으로 센터와 함께 프로그램을 운영하신 강사님은<br>
+          아래 강사카드 양식을 작성해 주세요.
+        </p>
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdzR8ZVqRn7f8GlrP6HsMebLgYrsInxgWxRjg1NxqFA7AMApw/viewform"
+          class="btn-unified"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="btn-unified-icon">📝</span>
+          <span>강사카드 입력</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© <span id="year"></span> 양양군 농촌활성화지원센터. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/teachers.js"></script>
+<script src="assets/js/notices.js"></script>
+<script src="assets/js/programs.js"></script>
+<script src="assets/js/pd.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
