@@ -21,7 +21,7 @@ window.PDModule = (function(){
       btn.type="button";
       btn.className="filter-btn" + (y===currentYear ? " active" : "");
       btn.dataset.year=y;
-      btn.textContent = (y==="2026") ? "2026 활동 PD" : "2025 활동 PD(아카이브)";
+      btn.textContent = (y==="2026") ? "2026년 활동 PD" : "2025년 활동 PD";
       yearWrap.appendChild(btn);
     });
 
