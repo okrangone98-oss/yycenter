@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>양양군 농촌활성화지원센터 Q&A</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f5f5f5;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .logo { font-weight: 700; font-size: 1.1rem; }
+    .logo span { color: #0b7c5b; }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+    .nav-links a:hover {
+      background: #0b7c5b;
+      color: #fff;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+    .page-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+    }
+    .card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .card + .card {
+      margin-top: 16px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 4px;
+    }
+    .list li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.85rem;
+    }
+    .list li:last-child { border-bottom: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: #0b7c5b;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #096149; }
+    .btn-ghost {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #0b7c5b11;
+      color: #0b7c5b;
+      margin-right: 6px;
+    }
+
+    /* ⬇ iframe 높이를 살짝 줄였습니다 */
+    iframe {
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      min-height: 600px;  /* 기존 800px → 600px */
+      background: #fafafa;
+    }
+
+    footer {
+      padding: 16px 0 24px;
+      background: #111;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      iframe { min-height: 700px; } /* 기존 900px → 700px */
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      양양군 <span>농촌활성화지원센터</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="qna.html">Q&A</a>
+      <a href="admin.html">관리자</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">Q&A · 강사카드 입력</h1>
+    <p class="page-subtitle">
+      센터 사업, 동아리·두레, 양양애(愛) 배달, 활동가 아카데미 등에 대한
+      궁금한 점을 정리하는 공간입니다. 아래에는 자주 묻는 질문과
+      <strong>강사카드 입력 전용 폼(구글 설문지)</strong>을 함께 안내합니다.
+    </p>
+
+    <div class="grid">
+      <!-- 왼쪽: Q&A / FAQ -->
+      <section>
+        <div class="card">
+          <h2>자주 묻는 질문(샘플)</h2>
+          <ul class="list">
+            <li>
+              <strong>Q. 의기양양 두레·동아리는 누구나 신청할 수 있나요?</strong><br />
+              A. 양양군에 거주하거나 생활권이 있는 3인 이상의 주민·단체라면 누구나 가능합니다.
+              모집 공고 시기에 맞춰 신청서를 제출하시면, 공정한 심사를 거친 후 선정됩니다.
+            </li>
+            <li>
+              <strong>Q. 양양애(愛) 식사 배달은 어떤 기준으로 선정되나요?</strong><br />
+              A. 양양애(愛) 배달은 읍·면 수요조사와 신청서를 바탕으로 고령자 비율·서류 충실도·접수 순위를 점수화해 예산 범위 내에서 선정 마을을 결정하고, 이후 마을과 협의하여 운영됩니다.
+            </li>
+            <li>
+              <strong>Q. 활동가 아카데미 수료 후에는 어떤 활동을 하게 되나요?</strong><br />
+              A. 센터의 다양한 사업에 기록·기획·운영 파트너로 함께 참여합니다.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>일반 문의 안내</h2>
+          <p style="font-size:0.85rem; color:#666; margin-bottom:8px;">
+            세부 사업 문의는 전화·이메일을 통해 언제든지 문의해 주세요.
+          </p>
+          <ul class="list">
+            <li>전화: 033-673-0221</li>
+            <li>이메일: yyfarmct@naver.com</li>
+            <li>운영시간: 월–금 09:00–18:00 (공휴일 휴무)</li>
+          </ul>
+          <a
+            href="mailto:yyfarmct@naver.com?subject=[QnA]%20양양군%20농촌활성화지원센터%20문의"
+            class="btn btn-ghost"
+            style="margin-top:10px;"
+          >
+            이메일로 문의하기
+          </a>
+
+          <!-- ⬇ 센터 채널/소식 모아보기 링크 추가 -->
+          <p style="font-size:0.8rem; color:#777; margin-top:10px;">
+            센터의 다양한 채널 및 소식은 아래 링크에서 한 번에 확인하실 수 있습니다.
+          </p>
+          <a
+            href="https://litt.ly/yyfarmct"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+            style="margin-top:6px;"
+          >
+            센터 채널 & 소식 모아보기
+          </a>
+        </div>
+      </section>
+
+      <!-- 오른쪽: 강사카드 입력 폼 -->
+      <aside>
+        <div class="card">
+          <h2>강사카드 입력 폼</h2>
+          <p style="font-size:0.85rem; color:#666; margin-bottom:10px;">
+            처음으로 센터와 함께 프로그램을 운영하신 강사님은
+            아래 <span class="badge">강사카드 양식</span>을 작성해 주세요. 
+          </p>
+
+          <!-- 새 창으로 여는 버튼 -->
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdzR8ZVqRn7f8GlrP6HsMebLgYrsInxgWxRjg1NxqFA7AMApw/viewform"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            style="width:100%; margin-bottom:12px;"
+          >
+            강사카드 입력하기 (새 창에서 열기)
+          </a>
+
+          <p style="font-size:0.8rem; color:#777; margin-bottom:8px;">
+            아래에서도 바로 작성하실 수 있습니다.
+            (모바일에서는 새 창으로 여는 방식을 권장합니다.)
+          </p>
+
+          <!-- 페이지 내에 바로 삽입된 구글 설문지 -->
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdzR8ZVqRn7f8GlrP6HsMebLgYrsInxgWxRjg1NxqFA7AMApw/viewform?embedded=true"
+          >
+            로딩 중입니다…
+          </iframe>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© <span id="year"></span> 양양군 농촌활성화지원센터. Q&A 페이지</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
