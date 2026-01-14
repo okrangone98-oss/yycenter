@@ -21,7 +21,7 @@ window.SHEET_CONFIG = {
   pd: {
     // ✅ PD도 강사카드처럼 연도별로 관리 추천
     // 컬럼 추천: 성명, 역할, 담당사업, 활동지역, 주요경력요약, 프로필사진(선택), 상태(활성/비활성), 이메일(비공개)...
-    "2025": "PASTE_YOUR_2025_PD_CSV_URL_HERE",
-    "2026": "PASTE_YOUR_2026_PD_CSV_URL_HERE"
+    "2025": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO3geLtt5vZ-bOZiY4vb_Rd48xcQGJyZbmjXcHA1ZDnDmFQWAysgxvD-EumgkalVDlmRgdHfzqIVwf/pubhtml?gid=1571351887&single=true",
+    "2026": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO3geLtt5vZ-bOZiY4vb_Rd48xcQGJyZbmjXcHA1ZDnDmFQWAysgxvD-EumgkalVDlmRgdHfzqIVwf/pubhtml?gid=1600189727&single=true"
   }
 };
