@@ -16,7 +16,7 @@ window.SHEET_CONFIG = {
     // ✅ 2025 / 2026 연도별 탭(또는 별도 시트)로 분리해서 운영하세요.
     // 아래 URL만 바꾸면 홈페이지는 자동으로 연도별 데이터로 바뀝니다.
     "2025": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO3geLtt5vZ-bOZiY4vb_Rd48xcQGJyZbmjXcHA1ZDnDmFQWAysgxvD-EumgkalVDlmRgdHfzqIVwf/pub?gid=10875331&single=true&output=csv",
-    "2026": "PASTE_YOUR_2026_PROGRAM_CSV_URL_HERE"
+    "2026": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO3geLtt5vZ-bOZiY4vb_Rd48xcQGJyZbmjXcHA1ZDnDmFQWAysgxvD-EumgkalVDlmRgdHfzqIVwf/pubhtml"
   },
   pd: {
     // ✅ PD도 강사카드처럼 연도별로 관리 추천
